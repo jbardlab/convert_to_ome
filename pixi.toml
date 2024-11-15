@@ -1,7 +1,7 @@
 [project]
 authors = ["Jared Bard <jabard89@gmail.com>"]
 channels = ["conda-forge","bioconda"]
-description = "Python scripts to convert "
+description = "Python scripts to convert proprietary image files to ome-tiff"
 name = "convert_to_ome"
 platforms = ["osx-64","win-64","linux-64"]
 version = "0.1.0"

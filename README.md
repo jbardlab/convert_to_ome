@@ -8,7 +8,7 @@ It is meant to be packaged as a docker container, using pixi to build the docker
 It can also be run as a pixi installation (pixi install, then pixi run python convert_to_ome.py).
 
 To build the docker container locally, run the following command:
-docker buildx build --platform linux/amd64,linux/arm64 -t convert_to_ome .   
+docker buildx build --platform linux/amd64 -t convert_to_ome .   
 
 To build the docker container and push to GHCR, run the following command:
 First followed instructions here to create a personal access token to push to GHCR:
@@ -19,7 +19,16 @@ $ echo $CR_PAT | docker login ghcr.io -u jbard --password-stdin
 
 Then run the following command:
 $ docker buildx create --use
-$ docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/jbardlab/convert_to_ome:v0.1 --push .
+$ docker buildx build --platform linux/amd64 -t ghcr.io/jbardlab/convert_to_ome:latest --push .
 
 To pull the docker container from GHCR, run the following command:
-$ docker pull ghcr.io/jbardlab/convert_to_ome:v0.1
+First make sure you are logged into GHCR: (see above)
+Then run the following command:
+
+$ docker pull ghcr.io/jbardlab/convert_to_ome:latest
+
+On a mac, you have to run in amd64 mode (because the arm64 version didn't run):
+$ docker pull --platform linux/amd64 ghcr.io/jbardlab/convert_to_ome:latest
+
+To run the docker container, run the following command:
+$ docker run --rm -v "data_folder":/data ghcr.io/jbardlab/convert_to_ome:v0.1 python convert_to_ome.py -d "/data" -o                                 
