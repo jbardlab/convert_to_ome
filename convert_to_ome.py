@@ -15,7 +15,7 @@ def convert_file_to_ome(file_path, overwrite=False):
         metadata_path = f"{os.path.splitext(file_path)[0]}_metadata.xml"
 
         if os.path.exists(ome_tiff_path) and not overwrite:
-            print(f"File {ome_tiff_path} already exists. Skipping conversion. Use overwrite flag -o")
+            print(f"File {ome_tiff_path} already exists. Skipping conversion. Use overwrite flag -W")
             return
 
         # Save the image as OME-TIFF
@@ -45,7 +45,7 @@ def main():
     parser.add_argument("path", help="Path to the file or directory to convert.")
     parser.add_argument("-d", "--directory", action="store_true",
                         help="Specify this flag if the path is a directory.")
-    parser.add_argument("-o", "--overwrite", action="store_true",
+    parser.add_argument("-W", "--overwrite", action="store_true",
                         help="Overwrite existing OME-TIFF files if they exist.")
 
     args = parser.parse_args()
