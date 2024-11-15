@@ -5,11 +5,15 @@ import os
 # %%
 test_dir = "/Users/jbard/Library/CloudStorage/OneDrive-TexasA&MUniversity/Documents - Team - Bard Lab/Data/MaxineC/Microscopy/241108/"
 test_file = os.path.join(test_dir, "Sample 1.nd2")
-BioImage(test_file)
+img = BioImage(test_file)
 
 # %%
-img.data
-image.dims
+import xml.dom.minidom
+meta = img.metadata.to_xml()
+parsed = xml.dom.minidom.parseString(str(meta))
+pretty = parsed.toprettyxml()
+print(pretty)
+
 # %%
 img.save(os.path.join(test_dir, "test.tif"))
 # %%
