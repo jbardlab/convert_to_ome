@@ -1,0 +1,23 @@
+[project]
+authors = ["Jared Bard <jabard89@gmail.com>"]
+channels = ["conda-forge","bioconda"]
+description = "Python scripts to convert "
+name = "convert_to_ome"
+platforms = ["osx-64","win-64","linux-64"]
+version = "0.1.0"
+license = "MIT"
+
+[tasks]
+
+[dependencies]
+python = ">=3.11, <3.12"
+ipykernel = ">=6.29.5,<7"
+scyjava = ">=1.10.0,<2"
+pip = ">=24.3.1,<25"
+
+[pypi-dependencies]
+bioio = ">=1.1.0"
+bioio-ome-tiff = ">=1.0.1"
+bioio-nd2 = ">=1.0.0"
+bioio-imageio = "~=1.0.0"
+bioio-czi = "~=1.0.1"
