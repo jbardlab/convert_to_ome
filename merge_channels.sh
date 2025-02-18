@@ -1,8 +1,9 @@
 #!/bin/bash
 
-env_path="/Users/jbard/Library/CloudStorage/OneDrive-TexasA&MUniversity/repos/convert_to_ome"
+# replace file paths below
+repo_path="/Users/jbard/Library/CloudStorage/OneDrive-TexasA&MUniversity/repos/convert_to_ome"
 
-file_path="/Users/jbard/Library/CloudStorage/OneDrive-TexasA&MUniversity/Documents - Team - Bard Lab/Data/MaxineC/Microscopy/241108/split/"
+file_path="/Users/jbard/Library/CloudStorage/OneDrive-TexasA&MUniversity/Documents - Team - Bard Lab/Data/JaredB/Microscopy/test/"
 
 # Iterate over dw_Sample files matching the pattern
 for file1 in "${file_path}"/dw_Sample*.ome.tif_ch561*.tiff; do
