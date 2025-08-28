@@ -11,13 +11,15 @@ license = "MIT"
 
 [dependencies]
 python = ">=3.11, <3.12"
-ipykernel = ">=6.29.5,<7"
-scyjava = ">=1.10.0,<2"
+scyjava = ">=1.12.0,<2"
 pip = ">=24.3.1,<25"
 
 [pypi-dependencies]
-bioio = ">=1.1.0"
-bioio-ome-tiff = ">=1.0.1"
-bioio-nd2 = ">=1.0.0"
-bioio-imageio = "~=1.0.0"
-bioio-czi = "~=1.0.1"
+bioio = ">=3.0"
+bioio-ome-tiff = ">=1.4.0"
+bioio-nd2 = ">=1.3.0"
+bioio-czi = ">=2.4.0"
+bioio-lif = ">=1.4.0"
+marimo = ">=0.15.0"
+bioio-bioformats = ">=1.3.0"
+requests = "*"
